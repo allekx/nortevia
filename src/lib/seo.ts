@@ -43,8 +43,8 @@ export function getPublicSiteUrl(): string | undefined {
 }
 
 export const socialImage = {
-  path: images.hero.src,
-  alt: images.hero.alt,
+  path: images.share.src,
+  alt: images.share.alt,
 } as const;
 
 export const siteName = site.name;

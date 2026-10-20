@@ -29,7 +29,11 @@ export const metadata: Metadata = {
   description: seo.description,
   applicationName: siteName,
   icons: {
-    icon: images.logo.src,
+    icon: [
+      { url: images.logoOnLight.src, media: "(prefers-color-scheme: light)" },
+      { url: images.logo.src, media: "(prefers-color-scheme: dark)" },
+    ],
+    apple: images.logoOnLight.src,
   },
   robots: {
     index: true,
@@ -49,27 +53,23 @@ export const metadata: Metadata = {
     siteName,
     title: seo.title,
     description: seo.description,
+    images: [
+      {
+        url: socialImage.path,
+        alt: socialImage.alt,
+      },
+    ],
     ...(siteUrl
       ? {
           url: "/",
-          images: [
-            {
-              url: socialImage.path,
-              alt: socialImage.alt,
-            },
-          ],
         }
       : {}),
   },
   twitter: {
-    card: siteUrl ? "summary_large_image" : "summary",
+    card: "summary_large_image",
     title: seo.title,
     description: seo.description,
-    ...(siteUrl
-      ? {
-          images: [socialImage.path],
-        }
-      : {}),
+    images: [socialImage.path],
   },
 };
 

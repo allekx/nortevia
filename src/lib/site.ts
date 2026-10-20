@@ -43,6 +43,15 @@ export const images = {
     alt: "Logotipo da NorteVia",
     originalName: "Logo Nortevia.png",
   },
+  logoOnLight: {
+    src: "/assets/img/logo-nortevia-on-light.png",
+    alt: "Logotipo da NorteVia",
+    originalName: "Logo Nortevia.png",
+  },
+  share: {
+    src: "/assets/img/og-nortevia.png",
+    alt: "NorteVia",
+  },
   hero: {
     src: "/assets/img/norte-via-imagem-4.jpeg",
     alt: "Caixas estacionárias vermelhas da NorteVia empilhadas",
