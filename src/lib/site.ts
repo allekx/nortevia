@@ -43,10 +43,9 @@ export const images = {
     alt: "Logotipo da NorteVia",
     originalName: "Logo Nortevia.png",
   },
-  logoOnLight: {
-    src: "/assets/img/logo-nortevia-on-light.png",
+  logoIcon: {
+    src: "/assets/img/logo-nortevia-icon.png",
     alt: "Logotipo da NorteVia",
-    originalName: "Logo Nortevia.png",
   },
   share: {
     src: "/assets/img/og-nortevia.png",

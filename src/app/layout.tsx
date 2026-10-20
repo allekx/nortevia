@@ -29,11 +29,8 @@ export const metadata: Metadata = {
   description: seo.description,
   applicationName: siteName,
   icons: {
-    icon: [
-      { url: images.logoOnLight.src, media: "(prefers-color-scheme: light)" },
-      { url: images.logo.src, media: "(prefers-color-scheme: dark)" },
-    ],
-    apple: images.logoOnLight.src,
+    icon: images.logoIcon.src,
+    apple: images.logoIcon.src,
   },
   robots: {
     index: true,
