@@ -6,6 +6,10 @@ export const site = {
     display: "+55 92 98629-5982",
     e164: "5592986295982",
   },
+  instagram: {
+    handle: "@nortevia.am",
+    url: "https://www.instagram.com/nortevia.am/",
+  },
   service: {
     title: "Locação de caixas estacionárias de 5 m³",
     capacity: "5 m³",

@@ -1,8 +1,5 @@
 import type { Metadata } from "next";
 import { Archivo, Source_Sans_3 } from "next/font/google";
-import { Footer } from "@/components/Footer";
-import { Header } from "@/components/Header";
-import { RevealObserver } from "@/components/RevealObserver";
 import { getPublicSiteUrl, seo, siteName, socialImage } from "@/lib/seo";
 import { images } from "@/lib/site";
 import "./globals.css";
@@ -39,9 +36,6 @@ export const metadata: Metadata = {
   ...(siteUrl
     ? {
         metadataBase: new URL(siteUrl),
-        alternates: {
-          canonical: "/",
-        },
       }
     : {}),
   openGraph: {
@@ -56,11 +50,6 @@ export const metadata: Metadata = {
         alt: socialImage.alt,
       },
     ],
-    ...(siteUrl
-      ? {
-          url: "/",
-        }
-      : {}),
   },
   twitter: {
     card: "summary_large_image",
@@ -72,18 +61,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="pt-BR" className={`${archivo.variable} ${sourceSans.variable}`}>
+    <html lang="pt-BR" className={`${archivo.variable} ${sourceSans.variable}`} data-scroll-behavior="smooth">
       <body className="min-h-screen font-sans antialiased">
         <a href="#conteudo" className="skip-link">
           Ir para o conteúdo
         </a>
-        <Header />
         {children}
-        <Footer />
-        <RevealObserver />
-        <noscript>
-          <style>{`.reveal{opacity:1!important;transform:none!important}`}</style>
-        </noscript>
       </body>
     </html>
   );

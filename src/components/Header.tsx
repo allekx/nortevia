@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { InstagramIcon, InstagramLink } from "@/components/InstagramLink";
 import { WhatsAppLink } from "@/components/WhatsAppLink";
 import { images, pageNav, site } from "@/lib/site";
 
@@ -27,9 +28,17 @@ export function Header() {
           ))}
         </nav>
 
-        <WhatsAppLink className="btn btn-primary shrink-0 whitespace-nowrap px-3 text-sm sm:px-5">
-          Pedir orçamento
-        </WhatsAppLink>
+        <div className="flex shrink-0 items-center gap-2 sm:gap-3">
+          <InstagramLink
+            className="inline-flex size-10 items-center justify-center text-[#f4f4f4] transition-colors hover:text-brand"
+            aria-label="Instagram da NorteVia"
+          >
+            <InstagramIcon />
+          </InstagramLink>
+          <WhatsAppLink className="btn btn-primary whitespace-nowrap px-3 text-sm sm:px-5">
+            Pedir orçamento
+          </WhatsAppLink>
+        </div>
       </div>
     </header>
   );

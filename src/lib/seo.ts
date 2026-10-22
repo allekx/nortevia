@@ -5,6 +5,11 @@ export const seo = {
   titleTemplate: "%s | NorteVia",
   description:
     "Locação de caixa estacionária de 5 m³ em Manaus para obras, reformas e entulho. Consulte o valor e a disponibilidade para o seu endereço.",
+  bio: {
+    title: "Links",
+    description:
+      "Fale com a NorteVia em Manaus para locação de caixa estacionária de 5 m³. WhatsApp, Instagram e e-mail.",
+  },
 } as const;
 
 const reservedHosts = new Set([

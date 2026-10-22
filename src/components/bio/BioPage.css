@@ -1,0 +1,128 @@
+.bio-shell {
+  min-height: 100dvh;
+  background: var(--color-ink);
+  color: #ffffff;
+}
+
+.bio-page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 26rem;
+  min-height: 100dvh;
+  margin-inline: auto;
+  padding: 1.5rem 1.25rem 2rem;
+}
+
+.bio-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.bio-links {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+}
+
+.bio-link {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  width: 100%;
+  min-height: 3.65rem;
+  padding: 0.8rem 1rem;
+  border-radius: 1rem;
+  text-decoration: none;
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.bio-link-icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 2.35rem;
+  height: 2.35rem;
+  border-radius: 0.7rem;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.bio-link-icon svg {
+  display: block;
+  width: 1.2rem;
+  height: 1.2rem;
+  overflow: visible;
+}
+
+.bio-link-primary .bio-link-icon {
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.bio-link-copy {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 0.1rem;
+  text-align: left;
+}
+
+.bio-link-copy strong {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.bio-link-copy span {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.bio-link-primary {
+  background: var(--color-brand);
+  color: #ffffff;
+  box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.18);
+}
+
+.bio-link-primary:hover {
+  background: var(--color-brand-dark);
+  transform: translateY(-1px);
+}
+
+.bio-link-primary .bio-link-copy span {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.bio-link-secondary {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+}
+
+.bio-link-secondary:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.58);
+}
+
+.bio-link:active {
+  transform: none;
+}
+
+.bio-foot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: auto;
+  padding-top: 2rem;
+  text-align: center;
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.48);
+}

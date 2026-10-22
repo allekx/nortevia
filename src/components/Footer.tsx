@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { InstagramLink } from "@/components/InstagramLink";
 import { WhatsAppLink } from "@/components/WhatsAppLink";
 import { images, mailtoUrl, pageNav, site } from "@/lib/site";
 
@@ -49,6 +50,12 @@ export function Footer() {
               >
                 {site.email}
               </a>
+            </p>
+            <p>
+              Instagram:{" "}
+              <InstagramLink className="text-white underline decoration-white/30 underline-offset-4 hover:decoration-white">
+                {site.instagram.handle}
+              </InstagramLink>
             </p>
             <p>CNPJ: {site.cnpj}</p>
             <p>Área de atendimento: {site.location.full}</p>

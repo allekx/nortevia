@@ -119,15 +119,26 @@ NORTEVIA/
 │       └── img/                      # cópias usadas pelo site
 ├── src/
 │   ├── app/
+│   │   ├── (site)/
+│   │   │   ├── layout.tsx
+│   │   │   └── page.tsx
+│   │   ├── bio/
+│   │   │   └── page.tsx
 │   │   ├── globals.css
 │   │   ├── layout.tsx
-│   │   ├── page.tsx
 │   │   ├── robots.ts
 │   │   └── sitemap.ts
 │   ├── components/
+│   │   ├── bio/
+│   │   │   ├── BioPage.css
+│   │   │   └── BioPage.tsx
 │   │   ├── Footer.tsx
 │   │   ├── Header.tsx
+│   │   ├── InstagramLink.tsx
+│   │   ├── RevealObserver.tsx
 │   │   ├── SectionHeading.tsx
+│   │   ├── WhatsAppFloat.css
+│   │   ├── WhatsAppFloat.tsx
 │   │   ├── WhatsAppLink.tsx
 │   │   └── home/
 │   │       ├── Audience.tsx
@@ -178,6 +189,7 @@ Novas imagens devem ser colocadas em `assets/img/` e copiadas para `public/asset
 - CNPJ: 61.868.548/0001-42
 - E-mail: nortevia.am@gmail.com
 - WhatsApp: +55 92 98629-5982
+- Instagram: https://www.instagram.com/nortevia.am/
 - Serviço: locação de caixas estacionárias de 5 m³
 - Valor informado: R$ 450,00 por locação
 - Permanência habitual: 5 dias, sem contar o dia da entrega nem o dia da retirada
@@ -196,6 +208,7 @@ O valor não deve ser apresentado como diária. A cotação final deve ser confi
 - Página inicial provisória com dados confirmados
 - Link real de orçamento via WhatsApp
 - Link real de e-mail
+- Link real do Instagram
 - Scripts `dev`, `build`, `start`, `lint` e `typecheck`
 - README de continuidade
 - Verificações executadas nesta fase: `npm run lint`, `npm run typecheck` e `npm run build` concluídos sem erro
@@ -208,11 +221,14 @@ O valor não deve ser apresentado como diária. A cotação final deve ser confi
 - Mensagem de WhatsApp atualizada e reutilizada por todos os CTAs de orçamento
 - SEO técnico básico: title, description, Open Graph, Twitter, idioma `pt-BR`, favicon com arquivo existente, `sitemap.xml` e `robots.txt`
 - Área de atendimento confirmada e publicada: Manaus, Amazonas, Brasil
+- Botão flutuante de WhatsApp no canto da tela, só com o ícone, usando o mesmo número e a mesma mensagem já confirmados
+- Link real do Instagram [@nortevia.am](https://www.instagram.com/nortevia.am/) no cabeçalho e no rodapé
+- Página `/bio` estilo link na bio, mobile, com a identidade visual existente e só links confirmados
 
 ## 12. Funcionalidades pendentes
 
 - Confirmação do domínio de produção (`NEXT_PUBLIC_SITE_URL`)
-- Páginas internas (serviço, contato, política, quando confirmadas)
+- Páginas internas adicionais (serviço, contato, política, quando confirmadas)
 - Formulários além do WhatsApp
 - Analytics
 - Favicon quadrado dedicado, se a empresa quiser um ícone diferente da logo de exibição
@@ -224,7 +240,8 @@ O valor não deve ser apresentado como diária. A cotação final deve ser confi
 - O projeto foi criado com `create-next-app@16.4.2`, versão estável no momento da implementação.
 - Cache Components não foi habilitado. Não é necessário para um site institucional nesta fase.
 - Os dados comerciais ficam centralizados em `src/lib/site.ts` para evitar informação inventada espalhada pela interface.
-- Apenas links com destino real foram criados: início, WhatsApp e e-mail.
+- Apenas links com destino real foram criados: início, `/bio`, WhatsApp, e-mail e Instagram.
+- A home institucional e a página `/bio` usam layouts diferentes. O cabeçalho, o rodapé e o botão flutuante de WhatsApp ficam só na home.
 - A configuração do TypeScript foi endurecida com `strict`, `noUnusedLocals`, `noUnusedParameters`, `noFallthroughCasesInSwitch` e `noUncheckedIndexedAccess`.
 - Tailwind CSS v4 usa `@theme` em `src/app/globals.css`. Não existe `tailwind.config.js`, porque essa é a configuração compatível com a versão instalada.
 - A pasta `assets/img/` preserva os arquivos originais. O site consome as cópias em `public/assets/img/`.
@@ -271,7 +288,7 @@ O valor não deve ser apresentado como diária. A cotação final deve ser confi
 
 - Código, scripts e estrutura da Fase 01 conferidos no estado real dos arquivos.
 - `npm run lint`, `npm run typecheck` e `npm run build` executados novamente, sem erro.
-- Home validada no navegador em `http://localhost:3000`: título, textos confirmados, links reais de WhatsApp e e-mail, imagens e layout desktop/mobile.
+- Home validada no navegador em `http://localhost:3000`: título, textos confirmados, links reais de WhatsApp, e-mail e Instagram, imagens e layout desktop/mobile.
 - Problema encontrado e corrigido: logo ilegível no cabeçalho. Criada a cópia de exibição `public/assets/img/logo-nortevia-web.png`, sem alterar o arquivo original.
 - A página comercial completa permanece pendente.
 
@@ -318,6 +335,25 @@ O valor não deve ser apresentado como diária. A cotação final deve ser confi
 - Animações só em CSS, com `prefers-reduced-motion` respeitado. Nenhuma biblioteca nova.
 - Textos, preço, WhatsApp, FAQ, imagens e SEO preservados.
 
+### Botão flutuante de WhatsApp
+
+- Botão circular fixo no canto inferior direito, visível em todas as seções.
+- Sem balão de texto: permanece apenas o ícone do WhatsApp.
+- O atalho usa o mesmo número e a mesma mensagem dos demais CTAs. Sem horário online nem texto inventado.
+
+### Instagram confirmado
+
+- Perfil publicado: [https://www.instagram.com/nortevia.am/](https://www.instagram.com/nortevia.am/).
+- Ícone no cabeçalho e handle `@nortevia.am` no rodapé. Sem número de seguidores, bio ou conteúdo inventado.
+
+### Página `/bio` — link na bio
+
+- Rota pública `/bio`, pensada para celular e para o perfil do Instagram.
+- Visual da marca: fundo preto, barra vermelha, logo original em fundo escuro, tipografia Archivo e Source Sans 3.
+- Links publicados: WhatsApp de orçamento, Instagram [@nortevia.am](https://www.instagram.com/nortevia.am/), e-mail e o site institucional.
+- Sem valor nesta página. CNPJ e Manaus no rodapé.
+- Sem horário, avaliação, endereço físico ou rede social extra.
+
 ## 17. INSTRUÇÕES PARA RETOMAR O PROJETO COM IA
 
 Antes de modificar o projeto, a IA deve:
@@ -325,7 +361,7 @@ Antes de modificar o projeto, a IA deve:
 1. Ler este `README.md` por completo.
 2. Ler os arquivos relevantes em `src/app`, `src/components`, `src/lib` e as configurações da raiz.
 3. Verificar o estado real do código. Não presumir que uma etapa está pronta só porque aparece neste arquivo.
-4. Identificar a última etapa concluída. Neste momento, a última etapa é o **ajuste visual industrial da home, sem mudança de conteúdo comercial**.
+4. Identificar a última etapa concluída. Neste momento, a última etapa é a **página `/bio` estilo link na bio**.
 5. Preservar as decisões já tomadas: dados confirmados, ausência de conteúdo fictício, identidade visual, links reais e TypeScript rigoroso.
 6. Não inventar endereço físico, horários, avaliações, clientes, certificações, garantias, tipos de resíduos aceitos, disponibilidade imediata ou atendimento fora de Manaus.
 7. Não apresentar o valor como diária.
